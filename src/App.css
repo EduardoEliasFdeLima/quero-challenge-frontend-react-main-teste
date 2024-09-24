@@ -1,0 +1,52 @@
+.testeclass{
+    /* width: 100%; */
+    /* background-color: aqua; */
+    /* background-color: brown; */
+}
+
+.testeclass ul{
+
+    grid-template-columns: repeat(5, 1fr);
+
+}
+
+.testeclass ul li{
+    margin: 0px;
+}
+
+
+
+
+/* Exibir 5 cards por linha em telas maiores 📱 (1536px ou mais).  */
+
+@media screen and (max-width: 1536px) {
+    .testeclass ul{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/* Exibir 3 cards por linha em telas grandes 📱 (768px ~ 1023px). */
+@media screen and (max-width: 1023px) {
+    .testeclass ul{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* Exibir 2 cards por linha em telas médias 📱 (640px ~ 767px). */
+
+@media screen and (max-width: 767px) {
+    .testeclass ul{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Exibir 1 card por linha em telas pequenas 📱 (até 639px) */
+
+@media screen and (max-width: 639px) {
+    .testeclass ul{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

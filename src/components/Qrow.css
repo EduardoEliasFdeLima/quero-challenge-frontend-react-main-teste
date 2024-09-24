@@ -1,0 +1,17 @@
+.qrowClass{
+   
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0; */
+    /* overflow: hidden; */
+}
+
+.qrowClassChild{
+    /* width: 200px; */
+    /* background-color: blue; */
+    
+}
+
+.testegrid{
+    grid-template-columns: 1fr 11fr;
+}
