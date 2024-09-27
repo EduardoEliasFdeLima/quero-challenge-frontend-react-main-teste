@@ -17,7 +17,7 @@ const QSectionForm: FC<QSectionFormProps> = ({ title, filter, orderBy }) => {
 
   return (
     <>
-      <section className="w-full lg:flex justify-between items-center hidden">
+      <section className="w-full lg:flex justify-between px-4 items-center hidden">
         <QHeading tag="h1">{title}</QHeading>
 
         <QPopover

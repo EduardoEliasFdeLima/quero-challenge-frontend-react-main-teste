@@ -1,7 +1,10 @@
 import { ReactNode, HTMLAttributes } from "react";
+import './QListCard.css'
 
 interface Card extends HTMLAttributes<HTMLElement> {
   id: string;
+  level: string;
+  kind: string;
 }
 
 interface QListCardProps<T extends Card> {
@@ -19,7 +22,7 @@ const QListCard = <T extends Card>({
       {...rest}
     >
       {cards.map((card) => (
-        <li className="" key={card.id}>{children(card)}</li>
+        <li className={`allcard ${card.level} ${card.kind}`} key={card.id}>{children(card)}</li>
       ))}
     </ul>
   );

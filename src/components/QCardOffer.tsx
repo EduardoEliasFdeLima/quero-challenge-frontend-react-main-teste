@@ -10,12 +10,14 @@ interface QCardOfferProps {
   rating: number;
   fullPrice: string;
   offeredPrice: string;
-  discount: string;
+  discount: number;
   kind: string;
   level: string;
   iesLogo: string;
   iesName: string;
 }
+
+
 
 const QCardOffer: FC<QCardOfferProps> = ({
   courseName,
@@ -28,7 +30,10 @@ const QCardOffer: FC<QCardOfferProps> = ({
   iesLogo,
   iesName,
 }) => {
+
+  {discount = ((Number(fullPrice) - Number(offeredPrice)) / fullPrice) * 100}
   return (
+    
     <article className="bg-white p-6 m-4 rounded-lg shadow-sm border flex flex-col justify-between items-start gap-3 ">
       <img src={iesLogo} alt={iesName} className="h-10 object-contain" />
       <QHeading tag="h2" size="sm">
@@ -37,8 +42,8 @@ const QCardOffer: FC<QCardOfferProps> = ({
       <QRating rating={rating} />
       <QPrice
         fullPrice={fullPrice}
-        offeredPrice={offeredPrice}
-        discount={discount}
+        offeredPrice={`R$${Number(offeredPrice).toFixed(2).replace('.', ',')}`}
+        discount={discount.toFixed(0) + `%`}
       />
       <div>
         <QText tag="p">{kind}</QText>
