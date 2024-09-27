@@ -31,7 +31,9 @@ const QCardOffer: FC<QCardOfferProps> = ({
   iesName,
 }) => {
 
-  {discount = ((Number(fullPrice) - Number(offeredPrice)) / fullPrice) * 100}
+  {discount = ((Number(fullPrice) - Number(offeredPrice)) / Number(fullPrice)) * 100}
+  // {kind.charAt(0).toUpperCase()
+  // kind.charAt(kind.length-1).toUpperCase()}
   return (
     
     <article className="bg-white p-6 m-4 rounded-lg shadow-sm border flex flex-col justify-between items-start gap-3 ">
@@ -43,12 +45,12 @@ const QCardOffer: FC<QCardOfferProps> = ({
       <QPrice
         fullPrice={fullPrice}
         offeredPrice={`R$${Number(offeredPrice).toFixed(2).replace('.', ',')}`}
-        discount={discount.toFixed(0) + `%`}
+        discount={`- ` + discount.toFixed(0) + `%`}
       />
       <div>
         <QText tag="p">{kind}</QText>
         <QText tag="p" color="minor" size="sm">
-          {level}
+          {`Graduação (`+level+`)`}
         </QText>
       </div>
       <QButton tag="a" size="sm" className="w-full">
